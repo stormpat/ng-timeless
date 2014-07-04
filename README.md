@@ -5,6 +5,7 @@ Easily show timestamps in a human readable form in your AngularJS applications.
 ### Usage
 
 Grab the angular-timeless.js library (written as a directive) and give you HTML a new element.
+This lib is not finished, when it is i will make it a full-blown angular module.
 
 ```html
 <div ng-controller="TimeAgo">
