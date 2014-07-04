@@ -24,7 +24,6 @@ app.directive('timeless', function() {
             time = time + 's';
           };
           result.push(ago + ' ' + time + ' ago');
-
         };
       }
       return result;
