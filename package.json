@@ -1,4 +1,10 @@
 {
+  "name": "Timeless",
+  "version": "0.1.0",
+  "description": "A small angularjs module for human readable timestamps.",
+  "author": "Patrik Storm <storm.patrik@gmail.com> (http://patrikstorm.com/)",
+  "license": "MIT",
+  "dependencies": "",
   "devDependencies": {
     "karma": "~0.8"
   },
