@@ -5,6 +5,10 @@
   "author": "Patrik Storm <storm.patrik@gmail.com> (http://patrikstorm.com/)",
   "license": "MIT",
   "dependencies": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stormpat/Timeless.git"
+  },
   "devDependencies": {
     "karma": "~0.8"
   },
