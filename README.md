@@ -1,51 +1,64 @@
 ## Angularjs Timeless
 
-Easily show timestamps in a human readable form in your AngularJS applications.
+Easily show timestamps in a human readable form (```eg. 5 months ago```) in your AngularJS applications.
+
+- Support for internationalization (kindof).
+- The timestamp will auto-update on a given interval. (defaults to 1 sec.)
+- The output is modifiable.
 
 ### Usage
 
-Grab the angular-timeless.js library (written as a directive) and give you HTML a new element.
-This lib is not finished, when it is i will make it a full-blown angular module.
+Grab the angular-timeless.js module (written as a directive) and give you HTML a new element.
+The options attribute is optional. (Must be an object)
 
 ```html
 <div ng-controller="TimeAgo">
-  <timeless time="agotime"></timeless>
+  <timeless time="agotime" options="yourOptions"></timeless>
 </div>
 ```
 
-Then give the ```agotime``` (or call it what you want) variable a value from your app.
+Use angulars DI to inject the module, then give the ```agotime``` (or call it what you want) variable a value from your app.
 
 ```js
 // Example in a controller.
+var app = angular.module("Timetest", ['Timeless']);
 app.controller("TimeAgo", function($scope) {
   $scope.agotime = Date.parse("Jan 4, 2014");
 });
-
 ```
 
-The result
+The result in your view is something like: ```6 months ago```
+
+### Options
+
+I tried to keep everything as extendable as possible, so you can pass in an options object to
+the directive modifying the behaviour. You can translate the output by overriding the defaults.
+
+Pass in the object as a options parameter to override.
+
+```js
+    $scope.yourOptions = {
+        past: ['ago'],
+        future: ['in'],
+        year: ['year', 'years'],
+        month: ['month', 'months'],
+        week: ['week', 'weeks'],
+        day: ['day', 'days'],
+        hour: ['hour', 'hours'],
+        minute: ['minute', 'minutes'],
+        second: ['second', 'seconds'],
+        prefix: '',
+        suffix: '',
+        updateInterval: 1000,
+      };
 ```
-5 months ago
-
-// or in HTML
-
-<div ng-controller="Time" class="ng-scope">
-  <span ng-transclude time="agotime" class="ng-isolate-scope">5 months ago</span>
-</div>
-```
-
-The repo contains demo .html and app.js files.
 
 ### Roadmap
 
-I plan to make the lib alot more flexible, adding options and other goodness.
-But for now it only does one task, converts a unit timestamp to a estimated value,
-eg. "5 months ago".
+For now the language translation functionality is very basic, but it works for langauges with the same
+semantics as english. For languages that has diffrent semantics on past, present and future tense
+you could try overwriting the defaults and use the prefix and suffixes.
 
-For now the language is kindof hardcoded, so only english is supported atm. I plan to
-rewrite the lib with language options so you can add your own locale.
-
-Future dates will also be supported soon.
 
 ### License
 
