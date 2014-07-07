@@ -15,17 +15,19 @@ describe('directive: timeless', function() {
   }));
 
   it("should add the correct classes to the element", function() {
-    // Timeout is because the directive has it. Will be undefinied otherwise.
-    setTimeout(function() {
-      expect(element.hasClass("ng-scope ng-isolate-scope")).toBe(true);
-    }, 1);
+    waits(function() {
+      setTimeout(function(){
+        expect(element.hasClass("ng-scope ng-isolate-scope")).toBe(true);
+      }, 1);
+    });
   });
 
   it("should show a human readable time or date", function() {
-    // Timeout is because the directive has it. Will be undefinied otherwise.
-    setTimeout(function() {
-      expect(element.html()).toBe(' 1 second ago ');
-    }, 1);
+    waits(function() {
+      setTimeout(function(){
+        expect(element.html()).toBe(' 1 second ago ');
+      }, 1);
+    });
   });
 
 });
