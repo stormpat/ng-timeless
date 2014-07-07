@@ -10,7 +10,7 @@ Easily show timestamps in a human readable form (```eg. 5 months ago```) in your
 
 ### Usage
 
-Grab the angular-timeless.js module (written as a directive) and give you HTML a new element.
+Grab the [ng-timeless.js](https://github.com/stormpat/Timeless/blob/master/src/ng-timeless.js) module (written as a directive) and give you HTML a new element.
 The options attribute is optional. (Must be an object)
 
 ```html
