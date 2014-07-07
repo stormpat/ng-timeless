@@ -1,5 +1,7 @@
 ## Angularjs Timeless
 
+[![Build Status](https://travis-ci.org/stormpat/Timeless.svg?branch=master)](https://travis-ci.org/stormpat/Timeless)
+
 Easily show timestamps in a human readable form (```eg. 5 months ago```) in your AngularJS applications.
 
 - Support for internationalization (kindof).
