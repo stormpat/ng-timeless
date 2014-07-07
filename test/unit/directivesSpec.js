@@ -1,39 +1,31 @@
+describe('directive: timeless', function() {
+  var element, scope;
 
+  beforeEach(module('Timeless'));
 
-describe("Timeless", function() {
-  beforeEach(function (){
+  beforeEach(inject(function($rootScope, $compile) {
 
-    angular.module('Timeless');
-    html = '<timeless time="agotime" options="localize"></timeless>';
+    scope = $rootScope.$new();
+    element = '<timeless time="agotime" options="localize"></timeless>';
+    scope.agotime = Date.now();
+    scope.options = {};
+    element = $compile(element)(scope);
+    scope.$digest();
 
-    inject(function($compile, $rootScope) {
-      //create a scope (you could just use $rootScope, I suppose)
-      scope = $rootScope.$new();
+  }));
 
-      //get the jqLite or jQuery element
-      elem = angular.element(html);
-
-      //compile the element into a function to
-      // process the view.
-      compiled = $compile(elem);
-
-
-      //run the compiled view.
-      compiled(scope);
-
-      //call digest on the scope!
-      scope.$digest();
-
-    });
+  it("should add the correct classes to the element", function() {
+    // Timeout is because the directive has it. Will be undefinied otherwise.
+    setTimeout(function() {
+      expect(element.hasClass("ng-scope ng-isolate-scope")).toBe(true);
+    }, 1);
   });
 
-  it("should show the correct unix timestamp", function() {
-    scope.agotime = Date.parse("Jul 8, 2014");
-    expect(scope.agotime).toBe(1404766800000);
-  });
-
-  it("should inject the correct human readable time", function() {
-    //
+  it("should show a human readable time or date", function() {
+    // Timeout is because the directive has it. Will be undefinied otherwise.
+    setTimeout(function() {
+      expect(element.html()).toBe(' 1 second ago ');
+    }, 1);
   });
 
 });
