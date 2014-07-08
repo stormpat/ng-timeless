@@ -42,13 +42,13 @@ Will display the human time in hours*
 
 *Options*
 
-- auto: (default)
-- month
-- week
-- day
-- hour
-- minute
-- second
+    - auto: (default)
+    - month
+    - week
+    - day
+    - hour
+    - minute
+    - second
 
 * NOTE. sometimes for dates not far in the past or future will not contain a value for years/months etc. This feature
 is best for dates long in the past or future.
