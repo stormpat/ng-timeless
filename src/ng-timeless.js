@@ -105,8 +105,7 @@
         var estimateTime = Timeless.estimate(scope.time)
           , setTimeType;
 
-        console.log(estimateTime);
-        if(typeof estimateTime[Timeless.labels.timeType[scope.type]] == 'undefined') {
+        if (typeof estimateTime[Timeless.labels.timeType[scope.type]] == 'undefined') {
           setTimeType = Timeless.labels.timeType.auto;
         }
         else {
