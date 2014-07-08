@@ -16,7 +16,7 @@ app.controller("Time", function($scope) {
         suffix: ''
       };
 
-    $scope.agotime = Date.parse("Jul 8, 2014");
+    $scope.agotime = Date.parse("Jul 4, 2016");
 
 
 });

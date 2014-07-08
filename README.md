@@ -31,6 +31,28 @@ app.controller("TimeAgo", function($scope) {
 
 The result in your view is something like: ```6 months ago```
 
+Theres also a (experimental) feature for displaying timestamps in a specific format, you can display the time in the same
+format if you want to. pass in a extra ```type``` attribute as a normal string.
+
+```
+  <timeless time="agotime" options="localize" type="'hour'"></timeless>
+```
+
+Will display the human time in hours*
+
+*Options*
+
+- auto: (default)
+- month
+- week
+- day
+- hour
+- minute
+- second
+
+* NOTE. sometimes for dates not far in the past or future will not contain a value for years/months etc. This feature
+is best for dates long in the past or future.
+
 ### Options
 
 I tried to keep everything as extendable as possible, so you can pass in an options object to
